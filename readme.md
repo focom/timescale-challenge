@@ -26,7 +26,7 @@ this command:
 ```bash
 poetry run python src/timescale/main.py process setup-files/query_params.csv -w <number of process>
 ```
-The tool will output something like:
+The tool only support a filepath as an input. If the csv file is in good shape and hold correct timestamp, the tool will output this:
 ```
 Starting computations with 12 process
 
