@@ -45,6 +45,5 @@ poetry run pytest
 ```
 ## Conclusion
 
-- The tool complete its purpose. I did notice that the median query time is similar accross
-with different number of psql clients.
+- The tool complete its purpose which is to show that the median query time is similar accross different numbers of psql clients.
 - Plus the CLI does split the query in different process as the overall time to perform the queries is cut in half. (time for 2 workers compared to 4)
