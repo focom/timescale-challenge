@@ -24,7 +24,7 @@ Now you have everything to test the tool.
 Once you have poetry and installed the depedencies you can run the tool with
 this command:
 ```bash
-poetry poetry run python src/timescale/main.py process setup-files/query_params.csv -w <number of process>
+poetry run python src/timescale/main.py process setup-files/query_params.csv -w <number of process>
 ```
 The tool will output something like:
 ```
