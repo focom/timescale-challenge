@@ -100,7 +100,7 @@ def run_worker_pool(csv_filepath, nb_process=cpu_count()):
     print(f"""
         Stats accross all queries:
             Number of queries performed: {nb_queries}
-            Time to perform all queires: {end - start}
+            Time to perform all queries: {end - start}
             Minimum query time: {min(query_times)}
             Maximum query time: {max(query_times)}
             Mean query time: {sum(query_times)/len(query_times)}
