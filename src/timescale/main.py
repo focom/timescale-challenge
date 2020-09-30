@@ -79,16 +79,18 @@ def build_statistic(host, pid, query_times):
 
 def perform_query(conn, host, timestamps):
     SQL = "SELECT usage FROM cpu_usage WHERE host=%s AND ts > %s AND ts < %s;"
-    start = timer()
     cur = conn.cursor()
+    # We only time the execution of the queries for our statistics
+    start = timer()
     cur.execute(SQL, (host, timestamps['start'], timestamps['end']))
-    cur.fetchall()
     end = timer()
+    cur.fetchall()
     return end - start
 
 
 def run_worker_pool(csv_filepath, nb_process=cpu_count()):
     print(f'Starting computations with {nb_process} process')
+    # This timer will ouput the overall performance of the script
     start = timer()
     queries, nb_queries = get_queries(csv_filepath)
     with Pool(nb_process) as pool:
